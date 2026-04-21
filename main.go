@@ -7,14 +7,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func init() {
+func main() {
 	config.EnvConfig()
 	config.SetupGoogleAuth()
 	config.DatabaseConfig()
 	config.MigrationConfig()
-}
 
-func main() {
 	router := gin.Default()
 
 	routes.UserRoutes(router)

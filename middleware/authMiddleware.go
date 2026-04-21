@@ -50,7 +50,6 @@ func AuthMiddleware() gin.HandlerFunc {
 
 		userID := uint(sub)
 
-		// 🔥 DB dan userni olish
 		var user models.User
 		if err := config.DB.First(&user, userID).Error; err != nil {
 			ctx.JSON(http.StatusUnauthorized, gin.H{"error": "User not found"})
